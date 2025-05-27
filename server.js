@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv'
 import cors from 'cors';
 import connectDB from './DB/connectDB.js';
+import UserRouter from './routes/user.routes.js'
 
 const app = express();
 const server= http.createServer(app);
@@ -18,11 +19,12 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-app.use('/', (req, res) => {
-    const istTime = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
-    res.send(`Current IST Time: ${istTime}`);
-});
-  
+// app.use('/', (req, res) => {
+//     const istTime = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+//     res.send(`Current IST Time: ${istTime}`);
+// });
+
+app.use('/api/v1/user',UserRouter)
 
 server.listen(PORT,()=>{
     console.log(`running on port:${PORT} `)
