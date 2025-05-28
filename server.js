@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 import cors from 'cors';
 import connectDB from './DB/connectDB.js';
 import UserRouter from './routes/user.routes.js'
+import { FolderRouter } from './routes/folder.routes.js';
 
 const app = express();
 const server= http.createServer(app);
@@ -24,7 +25,8 @@ app.use(cookieParser());
 //     res.send(`Current IST Time: ${istTime}`);
 // });
 
-app.use('/api/v1/user',UserRouter)
+app.use('/api/v1/user',UserRouter);
+app.use('/api/v1/folder',FolderRouter);
 
 server.listen(PORT,()=>{
     console.log(`running on port:${PORT} `)

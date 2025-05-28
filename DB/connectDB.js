@@ -10,7 +10,7 @@ const connectDB = async()=>{
  
     }
     catch(err){
-        console.log(err)
+        console.log("Network error:",err)
     }
 }
 export default connectDB;

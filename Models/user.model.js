@@ -28,7 +28,7 @@ const userSchema = new Schema(
     {
         timestamps:true
     }
-)
+) 
 
 //buil-in mongoose methods(pre , ..)
 userSchema.pre("save",async function(next){
