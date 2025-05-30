@@ -18,7 +18,7 @@ app.use(cors({
   credentials: true,
 }));
 app.use(express.json());
-app.use(cookieParser());
+app.use(cookieParser()); 
 
 // app.use('/', (req, res) => {
 //     const istTime = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });

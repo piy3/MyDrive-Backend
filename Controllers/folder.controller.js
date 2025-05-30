@@ -62,9 +62,10 @@ const getFolders = async (req, res) => {
       .populate("ownerId", "fullname email")
       .populate("parentFolder", "name");
     if (folders.length === 0) {
-      return res.status(404).json({ 
+      return res.status(200).json({ 
         success: "true",
         message: "No Child folder found",
+        folders: [],
       });
     }
     return res.status(200).json({
