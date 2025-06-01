@@ -86,7 +86,8 @@ const loginUser = async (req,res)=>{
         //setting up cookie
         const options = {
             httpOnly:true,
-            secure:true
+            secure:true,
+            sameSite:"None"
         }
 
         return res.status(200)
