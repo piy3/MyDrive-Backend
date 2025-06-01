@@ -12,8 +12,11 @@ const server= http.createServer(app);
 dotenv.config();
 const PORT =process.env.PORT ||  5000;
 
+const isProd = process.env.NODE_ENV === 'production';
+const origin = isProd ? process.env.PROD_ORIGIN : process.env.DEV_ORIGIN;
+
 app.use(cors({ 
-  origin: '*',
+  origin:origin,
   optionsSuccessStatus: 200,
   credentials: true,
 }));
